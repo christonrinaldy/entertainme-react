@@ -53,12 +53,15 @@ export default function Movie (props) {
         return (
             <div className="container">
                 <h1 className="title">Movies</h1>
-                <Button onClick = {()=> handleAddMovie()}>Add Movie...</Button>
+                <Row className="justify-content-center">
+                    <Button onClick = {()=> handleAddMovie()}>Add Movie</Button>
+                </Row>
+                <br></br>
                 <Row>
                     {data.getMovies.map((movie,index) => {
                         return (
                             <Col key={index} xm={4}>
-                                < Card style={{ width: '18rem', height: '40rem' }} className="bg-dark text-white">
+                                < Card style={{ width: '18rem', height: '40rem', marginBottom: '20px' }} className="bg-dark text-white">
                                     <Card.Body >
                                         <MovieCard
                                             data={movie}

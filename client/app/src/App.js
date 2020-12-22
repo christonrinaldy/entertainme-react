@@ -6,7 +6,10 @@ import {Movies, TvSeries, AddForm, FavoriteMovies, Home, Detail} from './pages'
 import {favoriteMoviesVar} from './cache'
 import {Navbar, Nav} from 'react-bootstrap'
 
+
+
 function App() {
+  
   const client = new ApolloClient({
     uri: 'http://localhost:4000/',
     cache: new InMemoryCache({
@@ -28,7 +31,7 @@ function App() {
       <Router>
         <Navbar bg="dark" variant="dark">
             <Navbar.Brand href="/" >EntertainMe</Navbar.Brand>
-            <Nav className="mr-auto">
+            <Nav className="mr-auto justify-content-around">
               <Link exact= "true" to="/movies"> Movies</Link>
               <Link exact= "true" to="/favMovies">Favorites</Link>
               <Link exact= "true" to="/tvSeries">TV Series</Link>

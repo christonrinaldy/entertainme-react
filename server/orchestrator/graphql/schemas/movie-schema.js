@@ -46,7 +46,10 @@ const resolvers = {
           //kondisi 
           const moviesCache = await redis.get('movies')
           if (moviesCache) {
-            return JSON.parse(moviesCache)
+            //return JSON.parse(moviesCache)
+            const {data} = await axios.get("http://localhost:3001/movies")
+            await redis.set('movies',JSON.stringify(data))
+            return data
           } else {
             const {data} = await axios.get("http://localhost:3001/movies")
             await redis.set('movies',JSON.stringify(data))

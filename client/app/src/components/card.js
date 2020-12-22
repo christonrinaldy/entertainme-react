@@ -8,7 +8,7 @@ export default function CardItem ({data, handleDetail, show}) {
                     <Card.Title>{data.title}</Card.Title>
                     <Card.Text>
                         {data.overview}
-                        <Button hidden={show} size="sm" onClick={() => handleDetail(data._id)}>Go to detail...</Button>
+                        {/* <Button hidden={show} size="sm" onClick={() => handleDetail(data._id)}>Go to detail...</Button> */}
                     </Card.Text>
                 
         </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {useMutation} from '@apollo/client'
 import { FETCH_MOVIES, ADD_MOVIE, UPDATE_MOVIE } from '../queries'
-import { Modal, Button } from 'react-bootstrap'
+import { Modal, Button, Row } from 'react-bootstrap'
 
 
 
@@ -81,8 +81,11 @@ export default function Form ({show, defaultVal,execution, handleClose}) {
                 <input onChange={(evt) => setTags(evt.target.value)} value={tags}></input><br></br>
                 
                 <Modal.Footer>
-                    <Button type="submit">Submit</Button>
-                    <Button onClick = {() => handleClose()}> Close </Button>
+                    <Row className="justify-content-between">
+                        <Button type="submit">Submit</Button>
+                        <Button onClick = {() => handleClose()}> Close </Button>
+                    </Row>
+                    
                 </Modal.Footer>
             </form>
             </Modal.Body>

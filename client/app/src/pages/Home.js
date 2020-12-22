@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {useQuery} from '@apollo/client'
 import {MovieCard} from '../components'
 import {FETCH_MOVIES} from '../queries'
@@ -7,6 +8,8 @@ import {TvSeries} from '../pages'
 
 export default function HomePage (props) {
     const { data, error, loading} =  useQuery(FETCH_MOVIES)
+
+ 
     
     function handleDetail(id) {
         props.history.push(`/detail/${id}`)
@@ -20,12 +23,12 @@ export default function HomePage (props) {
     return (
         <>
             <div className="container">
-                <h1 className="title">Movies</h1>
+                <h1 className="title justify-content-around">Movies</h1>
                 <Row>
                     {data.getMovies.map((movie,index) => {
                         return (
                             <Col key={index} xm={4}>
-                                < Card  style={{ width: '18rem', height: '40rem' }} className="bg-dark text-white">
+                                < Card  style={{ width: '18rem', height: '40rem', marginBottom: "20px" }} className="bg-dark text-white">
                                     <Card.Body >
                                         <MovieCard
                                             data={movie}
